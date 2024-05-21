@@ -11,4 +11,4 @@
 
 ### Скрипт установки
 
-```curl -s https://raw.githubusercontent.com/Batyushin/bash_scripts/main/wirenboard_install_nodered.sh | bash
+```curl -s https://raw.githubusercontent.com/Batyushin/bash_scripts/main/wirenboard_install_nodered.sh | bash```
