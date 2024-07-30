@@ -2,11 +2,11 @@
 
 # Обновление списка пакетов и установка необходимых компонентов
 echo "Обновление списка пакетов и установка необходимых компонентов..."
-sudo apt update && sudo apt install -y nodejs git make g++ gcc build-essential
+apt update && apt install -y nodejs git make g++ gcc build-essential
 
 # Установка Node-RED
 echo "Установка Node-RED..."
-sudo npm install -g --unsafe-perm node-red
+npm install -g --unsafe-perm node-red@3.1.11
 
 # Установка палитр для Node-RED
 echo "Установка палитры node-red-contrib-telegrambot..."
