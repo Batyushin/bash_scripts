@@ -1,4 +1,4 @@
-# Установки Node-RED
+# Установки Node-RED на WirenBoard
 
 Скрипт предназначен для автоматизации установки и настройки Node-RED в Wiren Board.
 
@@ -12,3 +12,9 @@
 ### Скрипт установки
 
 ```curl -s https://raw.githubusercontent.com/Batyushin/bash_scripts/main/wirenboard_install_nodered.sh | bash```
+
+
+# Установки Node-RED на Raspberry pi
+```curl -s https://raw.githubusercontent.com/Batyushin/bash_scripts/main/install_node_red_raspberrypi.sh | bash```
+
+
