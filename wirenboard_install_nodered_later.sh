@@ -4,26 +4,26 @@
 echo "Обновление списка пакетов и установка необходимых компонентов..."
 apt update && apt install -y nodejs git make g++ gcc build-essential
 
-# Установка Node-RED
+# Установка актуальной версии Node-RED
 echo "Установка Node-RED..."
-npm install -g --unsafe-perm node-red@3.1.11
+npm install -g --unsafe-perm node-red
 
 # Установка палитр для Node-RED
 echo "Установка палитры node-red-contrib-telegrambot..."
-sudo npm install -g --unsafe-perm node-red-contrib-telegrambot
+npm install -g --unsafe-perm node-red-contrib-telegrambot
 
 echo "Установка палитры node-red-contrib-spruthub..."
-sudo npm install -g --unsafe-perm node-red-contrib-spruthub
+npm install -g --unsafe-perm node-red-contrib-spruthub
 
 echo "Установка палитры node-red-contrib-wirenboard..."
-sudo npm install -g --unsafe-perm node-red-contrib-wirenboard
+npm install -g --unsafe-perm node-red-contrib-wirenboard
 
 echo "Установка палитры thingzi-logic-timers..."
-sudo npm install -g --unsafe-perm thingzi-logic-timers
+npm install -g --unsafe-perm thingzi-logic-timers
 
-# Создание и редактирование systemd сервиса для Node-RED
+# Создание и настройка systemd сервиса для Node-RED
 echo "Создание файла сервиса Node-RED..."
-sudo tee /etc/systemd/system/nodered.service > /dev/null <<EOL
+tee /etc/systemd/system/nodered.service > /dev/null <<EOL
 [Unit]
 Description=Node-RED graphical event wiring tool
 Wants=network.target
@@ -47,6 +47,6 @@ EOL
 
 # Включение и запуск сервиса Node-RED
 echo "Включение и запуск сервиса Node-RED..."
-sudo systemctl enable nodered && sudo systemctl start nodered
+systemctl enable nodered && systemctl start nodered
 
 echo "Установка и настройка Node-RED завершена."
