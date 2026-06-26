@@ -29,7 +29,7 @@ curl -s https://raw.githubusercontent.com/Batyushin/bash_scripts/main/wirenboard
 
 **Команда для установки:**
 ```bash
-curl -s https://raw.githubusercontent.com/Batyushin/bash_scripts/main/install_node_red_raspberrypi.sh | bash
+curl -s https://raw.githubusercontent.com/Batyushin/bash_scripts/main/raspberrypi_install_nodered.sh | bash
 ```
 
 ---
