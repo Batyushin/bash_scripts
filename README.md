@@ -1,20 +1,52 @@
-# Установки Node-RED на WirenBoard
+# ⚙️ Установка Node-RED на контроллеры
 
-Скрипт предназначен для автоматизации установки и настройки Node-RED в Wiren Board.
+Скрипты предназначены для быстрой и идеологически правильной автоматизированной установки среды Node-RED, а также всех необходимых системных зависимостей. 
 
-## Шаги установки
+В процессе скрипт автоматически:
+* Подтягивает актуальную версию Node.js.
+* Устанавливает ядро Node-RED.
+* Создает изолированную рабочую директорию.
+* Локально устанавливает базовые палитры (включая wirenboard, spruthub и telegram).
+* Настраивает автозапуск через systemd.
 
-1. Обновите список пакетов и установите необходимые компоненты.
-2. Установите Node-RED.
-3. Установите необходимые палитры для Node-RED.
-4. Создайте и настройте сервис Node-RED.
+## 🚀 Установка на WirenBoard
 
-### Скрипт установки
+### Порядок действий скрипта:
+1. **Подготовка:** Обновление пакетов и установка утилит сборки (`curl`, `git`, `build-essential`).
+2. **Движок:** Добавление репозитория NodeSource и установка свежей Node.js.
+3. **Node-RED:** Глобальная установка актуальной версии.
+4. **Палитры:** Создание директории `/root/.node-red` и локальная установка модулей интеграции.
+5. **Сервис:** Регистрация демона `nodered.service` и его запуск.
 
-```curl -s https://raw.githubusercontent.com/Batyushin/bash_scripts/main/wirenboard_install_nodered.sh | bash```
+**Команда для установки:**
+```bash
+curl -s [https://raw.githubusercontent.com/Batyushin/bash_scripts/main/wirenboard_install_nodered.sh](https://raw.githubusercontent.com/Batyushin/bash_scripts/main/wirenboard_install_nodered.sh) | bash
+```
 
+## 🍓 Установка на Raspberry Pi
 
-# Установки Node-RED на Raspberry pi
-```curl -s https://raw.githubusercontent.com/Batyushin/bash_scripts/main/install_node_red_raspberrypi.sh | bash```
+Алгоритм аналогичен, но адаптирован под архитектуру и ОС "малинки".
 
+**Команда для установки:**
+```bash
+curl -s [https://raw.githubusercontent.com/Batyushin/bash_scripts/main/install_node_red_raspberrypi.sh](https://raw.githubusercontent.com/Batyushin/bash_scripts/main/install_node_red_raspberrypi.sh) | bash
+```
 
+---
+
+## 🔄 Правильное обновление (без переустановки)
+
+Если Node-RED уже установлен с помощью скриптов выше, полный перезапуск установки **не требуется**. Используйте точечные команды для поддержания системы в актуальном состоянии.
+
+**Обновление ядра Node-RED:**
+```bash
+npm install -g --unsafe-perm node-red
+systemctl restart nodered
+```
+
+**Массовое обновление всех установленных палитр (включая spruthub):**
+```bash
+cd /root/.node-red
+npm update
+systemctl restart nodered
+```
