@@ -20,7 +20,7 @@
 
 **Команда для установки:**
 ```bash
-curl -s [https://raw.githubusercontent.com/Batyushin/bash_scripts/main/wirenboard_install_nodered.sh](https://raw.githubusercontent.com/Batyushin/bash_scripts/main/wirenboard_install_nodered.sh) | bash
+curl -s https://raw.githubusercontent.com/Batyushin/bash_scripts/main/wirenboard_install_nodered.sh | bash
 ```
 
 ## 🍓 Установка на Raspberry Pi
@@ -29,7 +29,7 @@ curl -s [https://raw.githubusercontent.com/Batyushin/bash_scripts/main/wirenboar
 
 **Команда для установки:**
 ```bash
-curl -s [https://raw.githubusercontent.com/Batyushin/bash_scripts/main/install_node_red_raspberrypi.sh](https://raw.githubusercontent.com/Batyushin/bash_scripts/main/install_node_red_raspberrypi.sh) | bash
+curl -s https://raw.githubusercontent.com/Batyushin/bash_scripts/main/install_node_red_raspberrypi.sh | bash
 ```
 
 ---
